@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "earth-gis"
+version = "0.1.0"
+description = "Geographic information system (GIS) applications"
+authors = ["cgroll <groll.christian.edu@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.7.1,<4.0"
+geemap = "^0.8.16"
+numpy = "^1.20.3"
+pandas = "^1.2.4"
+jupyter = "^1.0.0"
+earthengine-api = "^0.1.265"
+cookiecutter = "^1.7.3"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
