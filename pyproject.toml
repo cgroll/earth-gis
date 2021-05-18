@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "earth-gis"
+name = "egis"
 version = "0.1.0"
 description = "Geographic information system (GIS) applications"
 authors = ["cgroll <groll.christian.edu@gmail.com>"]
