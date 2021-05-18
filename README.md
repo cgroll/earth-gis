@@ -4,6 +4,16 @@ earth-gis
 Geographic information system (GIS) applications using [remote
 sensing](https://en.wikipedia.org/wiki/Remote_sensing).
 
+### Links
+
+- https://code.earthengine.google.com/
+- https://developers.google.com/earth-engine/tutorials/tutorial_api_01
+- https://github.com/giswqs/Awesome-GEE#apps
+- https://github.com/giswqs/geemap
+- https://github.com/giswqs/earthengine-py-notebooks
+- https://courses.spatialthoughts.com/end-to-end-gee.html#learning-resources
+- https://science.nasa.gov/ems/08_nearinfraredwaves
+
 
 Project Organization
 ------------
