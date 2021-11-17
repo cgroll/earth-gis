@@ -12,6 +12,7 @@ pandas = "^1.2.4"
 jupyter = "^1.0.0"
 earthengine-api = "^0.1.265"
 cookiecutter = "^1.7.3"
+branca = "0.4.2" # FIX for leaflet maps on github pages; otherwise maps are not shown; https://issueexplorer.com/issue/python-visualization/folium/1277
 
 [tool.poetry.dev-dependencies]
 
