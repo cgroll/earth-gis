@@ -144,14 +144,15 @@ traittypes = ">=0.0.6"
 
 [[package]]
 name = "branca"
-version = "0.4.2"
+version = "0.3.1"
 description = "Generate complex HTML+JS pages with Python"
 category = "main"
 optional = false
-python-versions = ">=3.5"
+python-versions = "*"
 
 [package.dependencies]
 jinja2 = "*"
+six = "*"
 
 [[package]]
 name = "cachetools"
@@ -1791,7 +1792,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.7.1,<4.0"
-content-hash = "bba3c19701bc87c3ac974e5acc30edbf4281d96c141bb8af5492ed8890e43ae3"
+content-hash = "aee4f1df7f07937c7d2e01e0ce7d4dc6fb639dbc1248f1897e1771c32af3348b"
 
 [metadata.files]
 anyio = [
@@ -1848,8 +1849,9 @@ bqplot = [
     {file = "bqplot-0.12.31.tar.gz", hash = "sha256:cd880a84bd495ee5bf0687b496ddbc8049d2a9feff056f9343213e83e71737f7"},
 ]
 branca = [
-    {file = "branca-0.4.2-py3-none-any.whl", hash = "sha256:62c2e777f074fc1830cd40ba9e650beb941861075980babafead8d97856b1a4b"},
-    {file = "branca-0.4.2.tar.gz", hash = "sha256:c111453617b17ab2bda60a4cd71787d6f2b59c85cdf71ab160a737606ac66c31"},
+    {file = "branca-0.3.1-py2-none-any.whl", hash = "sha256:56e93dc6f65f4ff0169b5aac9e7db5c667da34c42b78d7f7bd0cb47af9de19e9"},
+    {file = "branca-0.3.1-py3-none-any.whl", hash = "sha256:4d89048add9628d1f83a73c6482c116f6752580cc03d5fe09de0bdeb8e5a2158"},
+    {file = "branca-0.3.1.tar.gz", hash = "sha256:3e762c9bdf40725f3d05ea1fda8fae9b470bfada6474e43a1242c8204a7bb15e"},
 ]
 cachetools = [
     {file = "cachetools-4.2.4-py3-none-any.whl", hash = "sha256:92971d3cb7d2a97efff7c7bb1657f21a8f5fb309a37530537c71b1774189f2d1"},
