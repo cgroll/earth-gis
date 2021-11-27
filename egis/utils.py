@@ -133,3 +133,52 @@ def extract_img_collection_properties(this_collection):
     img_coll_metadata = pd.DataFrame.from_dict(dict_list)
     
     return img_coll_metadata
+
+
+######################### US land cover dataset
+########################################################
+
+def get_landcover_class_info(landcover_data_info):
+    """
+    Get overview table with land cover classification classes
+    """
+    
+    # get class IDs
+    lc_class_values = landcover_data_info['properties']['landcover_class_values']
+    lc_class_info = pd.DataFrame(lc_class_values, columns=['class_number'])
+
+    # split text into name and description
+    lc_class_texts = landcover_data_info['properties']['landcover_class_names']
+    split_texts = [this_text.split(' - ') for this_text in lc_class_texts]
+
+    lc_class_info['class_name'] = [this_lc_type[0] for this_lc_type in split_texts]
+    lc_class_info['description'] = [this_lc_type[1] for this_lc_type in split_texts]
+
+    # create class names how they will be created in columns of zonal statistics
+    lc_class_info['class_name_statistics'] = ['Class_' + str(this_val) for this_val in lc_class_values]
+    
+    # get class color codes
+    lc_class_info['color'] = landcover_data_info['properties']['landcover_class_palette']
+
+    # get aggregate class groups
+    lc_class_info['class_group'] = [int(str(this_double_digit_val)[0]) for this_double_digit_val in lc_class_values]
+
+    class_group_name_map = {1: 'Water',
+                            2: 'Developed',
+                            3: 'Barren',
+                            4: 'Forest',
+                            5: 'Shrubland',
+                            7: 'Herbaceous',
+                            8: 'Planted/Cultivated',
+                            9: 'Wetlands'
+                           }
+
+    # attach class group names
+    lc_class_info['class_group_name'] = lc_class_info['class_group'].map(lambda x: class_group_name_map[x])
+
+    # automatically derive class group color coding
+    lc_class_group_colors = lc_class_info.groupby('class_group').head(1).loc[:, ['class_group', 'color']]
+    lc_class_group_colors = lc_class_group_colors.rename({'color': 'class_group_color'}, axis=1)
+    lc_class_info = lc_class_info.merge(lc_class_group_colors, how='left')
+    
+    return lc_class_info
