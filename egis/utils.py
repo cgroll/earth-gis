@@ -158,7 +158,9 @@ def get_landcover_class_info(landcover_data_info):
     lc_class_info['class_name_statistics'] = ['Class_' + str(this_val) for this_val in lc_class_values]
     
     # get class color codes
-    lc_class_info['color'] = landcover_data_info['properties']['landcover_class_palette']
+    colors = landcover_data_info['properties']['landcover_class_palette']
+    colors = ['#' + this_color for this_color in colors]
+    lc_class_info['color'] = colors
 
     # get aggregate class groups
     lc_class_info['class_group'] = [int(str(this_double_digit_val)[0]) for this_double_digit_val in lc_class_values]
@@ -177,7 +179,7 @@ def get_landcover_class_info(landcover_data_info):
     lc_class_info['class_group_name'] = lc_class_info['class_group'].map(lambda x: class_group_name_map[x])
 
     # automatically derive class group color coding
-    lc_class_group_colors = lc_class_info.groupby('class_group').head(1).loc[:, ['class_group', 'color']]
+    lc_class_group_colors = lc_class_info.groupby('class_group').tail(1).loc[:, ['class_group', 'color']]
     lc_class_group_colors = lc_class_group_colors.rename({'color': 'class_group_color'}, axis=1)
     lc_class_info = lc_class_info.merge(lc_class_group_colors, how='left')
     
