@@ -4,6 +4,10 @@ earth-gis
 Geographic information system (GIS) applications using [remote
 sensing](https://en.wikipedia.org/wiki/Remote_sensing).
 
+### Geemap installation / authentication
+
+https://book.geemap.org/chapters/01_introduction.html#earth-engine-authentication
+
 ### Links
 
 - https://code.earthengine.google.com/
