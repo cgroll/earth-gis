@@ -1,2 +1,3 @@
 *.*~
 venv/
+/poverty-prediction/.env
