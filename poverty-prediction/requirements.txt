@@ -1,0 +1,7 @@
+pandas
+numpy
+gdal
+geoio
+matplotlib
+seaborn
+dvc
