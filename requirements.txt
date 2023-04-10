@@ -3,6 +3,9 @@
 
 # external requirements
 geemap == 0.8.16
+rioxarray
+scikit-image
+pystac_client
 numpy == 1.20.3
 pandas == 1.2.4
 jupyter == 1.0.0
